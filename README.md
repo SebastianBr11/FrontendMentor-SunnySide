@@ -29,7 +29,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Github](/)
+- Solution URL: [Github](https://github.com/SebastianBr11/FrontendMentor-SunnySide)
 - Live Site URL: [Vercel](https://csb-17cpc.vercel.app/)
 
 ## My process
