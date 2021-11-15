@@ -1,0 +1,158 @@
+@use '../../styles/variables' as v;
+
+.full-section {
+  --content-space: 6rem;
+
+  display: grid;
+  row-gap: 3rem;
+  color: var(--clr-vdark-desat-blue);
+  text-align: center;
+  
+  
+
+  .content-wrapper {
+    padding-inline: 1rem;
+
+    @media screen and (min-width: v.$break-lg) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: max(25vw, 100%);
+      padding: 2rem;
+    }
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    @media screen and (min-width: v.$break-lg) {
+      max-width: 45ch;
+    }
+  }
+
+  h2 {
+    font-size: clamp(1.5rem, 1rem + 1.5vw, 2.2rem);
+  }
+  
+  h2, a {
+    font-family: var(--font-serif);
+    font-weight: 900;
+  }
+  
+  p {
+    color: var(--clr-dark-gray-blue);
+  }
+  
+  a {
+    position: relative;
+    text-transform: uppercase;
+    color: inherit;
+    text-decoration: none;
+    isolation: isolate;
+    align-self: center;
+
+    @media screen and (min-width: v.$break-lg) {
+      align-self: start;    
+    }
+    
+    &::after {
+      content: "";
+      z-index: -1;
+      position: absolute;
+      background-color: var(--clr-btn);
+      opacity: .3;
+      top: 65%;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 110%;
+      height: 50%;
+      transform: translateX(-4%);
+      border-radius: 50px;
+      transition: opacity .2s ease;
+    }
+
+    &:hover::after {
+      opacity: 1;
+    }
+  }
+  
+  picture {
+    order: -1;
+    justify-self: stretch;
+  }
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  + .full-section {
+    margin-top: 3rem;
+  }
+
+  @media screen and (min-width: v.$break-lg) {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    max-height: 34rem;
+    text-align: left;
+
+    &.reverse {
+      picture {
+        order: 1;
+    justify-self: start;
+
+      }
+    }
+
+    img {
+      justify-self: end;
+    }
+
+    + .full-section {
+      margin-top: 0;
+    }
+  }
+}
+
+.half-section {
+  display: grid;
+  
+  @media (min-width: v.$break-lg) {
+    justify-content: stretch;
+  }
+
+  .content {
+    align-self: end;
+    max-width: 43ch;
+    justify-self: center;
+    text-align: center;
+    padding: 0 1.7rem 3rem 1.7rem;
+
+    h2 {
+      font-size: 2rem;
+      font-family: var(--font-serif);
+      color: hsla(0, 0%, 0%, 70%);
+    }
+
+    p {
+      margin-top: 1.4rem;
+      color: hsla(0, 0%, 0%, 50%);      
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media screen and (min-width: v.$break-lg) {
+    justify-content: start;
+  }
+}
+
+.half-section > * {
+  grid-area: 1 / 1;
+}

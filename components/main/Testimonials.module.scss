@@ -1,0 +1,70 @@
+@use '../../styles/variables' as v;
+
+.testimonial-overview {
+  text-align: center;
+  color: var(--clr-vdark-desat-blue);
+  margin-block: clamp(4rem, 10vw + 1rem, 6rem);
+  padding-inline: 1.3rem;
+}
+
+.testimonials__title {
+  font-size: 1rem;
+  color: var(--clr-gray-blue);
+  font-family: var(--font-serif);
+  text-transform: uppercase;
+  letter-spacing: .25em;
+}
+
+.testimonials {
+  display: flex;
+  column-gap: 1.5rem;
+  flex-wrap: wrap;
+  padding-inline: 0;
+}
+
+.testimonial {
+  display: grid;
+  justify-items: center;
+  align-items: end;
+  gap: 2rem;
+  flex: 1 1 24ch;
+  max-width: 34ch;
+  margin: 0 auto;
+}
+
+.testimonial__icon {
+  display: inline-block;
+  border-radius: 50%;
+  overflow: hidden;
+  height: 50%;
+  aspect-ratio: 1;
+}
+
+.testimonial__description {
+  color: var(--clr-vdark-gray-blue);
+}
+
+.testimonial__client__name {
+  font-family: var(--font-serif);
+  font-weight: 900;
+}
+
+.testimonial__client__role {
+  color: var(--clr-gray-blue);
+  font-size: .9rem;
+  margin-top: .2rem;
+}
+
+@media (min-width: v.$break-lg) {
+  .testimonial-overview {
+    padding-inline: 5rem;
+  }
+
+  .testimonials {
+    padding-inline: min(2vw + 1rem, 3rem);
+  }
+
+  .testimonial {
+    gap: 2.5rem;
+  }
+}

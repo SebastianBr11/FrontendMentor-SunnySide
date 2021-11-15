@@ -1,0 +1,39 @@
+.footer {
+  display: grid;
+  gap: 2rem;
+  justify-content: center;
+  justify-items: center;
+  padding-block: 3rem;
+  color: var(--clr-dark-mod-cyan);
+  background: var(--clr-footer-bg);
+
+  .logo {
+    width: 140px;
+    fill: var(--clr-dark-mod-cyan);
+  }
+
+  ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  a:hover {
+    color: var(--clr-white);
+  }
+
+  &__socials {
+    display: flex;
+    gap: 1.3rem;
+    margin-top: 2rem;
+
+    svg:hover path {
+      fill: var(--clr-white);
+    }
+  }
+}

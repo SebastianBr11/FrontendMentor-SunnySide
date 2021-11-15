@@ -1,0 +1,148 @@
+@use '../../styles/variables' as v;
+
+.list {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  list-style-type: none;
+  gap: 3rem;
+  
+  .linkList {
+    display: none;
+    visibility: hidden;
+    background-color: var(--clr-white);
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      list-style-type: none;
+      min-height: 100%;
+      gap: 1.75rem;
+    }
+
+    
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &.button {
+      display: block;
+      padding: 1em 2em;
+      text-transform: uppercase;
+      color: var(--clr-dark-blue);
+      background-color: #fff;
+      font-family: var(--font-serif);
+      border-radius: 50px;
+      text-decoration: none;
+      transition: .4s background-color ease, .4s color ease;
+
+      &:hover {
+        color: #fff;
+        background-color: hsl(0, 100%, 100%, .3);
+      }
+    }
+  }
+
+  .logoList {
+    flex: 1;
+    width: 100%;
+  }
+
+  .nestedList {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .hamburger {
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+
+  @media screen and (min-width: v.$break-lg) {
+    flex-direction: row;
+
+    .linkList {
+      display: block;
+      visibility: visible;
+      position: relative;
+      flex: 1 1;
+      background: none;
+
+      ul {
+        flex-direction: row;
+        justify-content: end;
+        gap: clamp(2rem, 1vw + 1rem, 3.5rem);
+      }
+    }
+
+    .hamburger {
+      display: none;
+      visibility: hidden;
+    }
+  }
+
+}
+
+.header {
+  padding: .5rem;
+  position: relative;
+
+  
+  &.navOpen {
+      @media (max-width: v.$break-lg) {
+        .linkList {
+          display: block;
+          visibility: visible;
+          position: absolute;
+          margin: 1.5rem;
+          top: 4rem;
+          left: 0;
+          right: 0;
+          padding: 2rem 0 2rem 0;
+          
+          &::before {
+            content: "";
+            position: absolute;
+            border-left: 1.5rem solid transparent;
+            border-bottom: 1.5rem solid var(--clr-white);
+            right: 0;
+            top: -1.48rem;
+            width: 0;
+            height: 0;
+          }
+        }
+        
+        .linkListItem {
+        }
+        
+        a:not(.button) {
+          color: var(--clr-dark-gray-blue);
+        }
+        
+        .button {
+        font-size: .9rem;
+        background-color: var(--clr-yellow);
+      }
+    }
+
+    @media (max-width: v.$break-md) {
+      .linkList {
+        margin: .5rem;
+      }
+    }
+  }
+  
+  @media screen and (min-width: v.$break-md) {
+    padding: .5rem 1rem;
+  }
+}
+

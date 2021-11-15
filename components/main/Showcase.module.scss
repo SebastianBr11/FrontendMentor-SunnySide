@@ -1,0 +1,12 @@
+@use '../../styles/variables' as v;
+
+.half-container {
+  margin-top: 3rem;
+
+  @media screen and (min-width: v.$break-lg) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    max-height: 34rem;
+    margin-top: 0;
+  }
+}

@@ -1,0 +1,72 @@
+@use 'variables' as v;
+
+:root {
+  /* Primary */
+  --clr-soft-red: hsl(7, 99%, 70%);
+  --clr-yellow: hsl(51, 100%, 49%);
+  --clr-dark-desat-cyan: hsl(167, 40%, 24%);
+  --clr-dark-blue: hsl(198, 62%, 26%);
+  --clr-dark-mod-cyan: hsl(168, 34%, 41%);
+  --clr-footer-bg: hsl(168, 44%, 70%);
+
+  /* Neural */
+  --clr-vdark-desat-blue: hsl(212, 27%, 19%);
+  --clr-vdark-gray-blue: hsl(213, 9%, 39%);
+  --clr-dark-gray-blue: hsl(232, 10%, 55%);
+  --clr-gray-blue: hsl(210, 4%, 67%);
+  --clr-white: hsl(0, 0%, 100%);
+
+  --font-sans-serif: "Barlow", sans-serif;
+  --font-serif: "Fraunces", serif;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 1.125rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans-serif);
+  color: var(--clr-white);
+}
+
+h1, h2, h3 {
+  line-height: 1.2;
+}
+
+p {
+  line-height: 1.6;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.header {
+  background-image: url("/images/mobile/image-header.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center 60%;
+  padding: 1em;
+  min-height: 30rem;
+  margin: 0 auto;
+  
+  @media (min-width: v.$break-lg) {
+    min-height: 48rem;
+    background-image: url("/images/desktop/image-header.jpg");
+  }
+}
+
+.container {
+  max-width: 80rem;
+  margin-inline: auto;
+}
