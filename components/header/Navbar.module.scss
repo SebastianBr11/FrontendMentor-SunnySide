@@ -42,11 +42,6 @@
       border-radius: 50px;
       text-decoration: none;
       transition: .4s background-color ease, .4s color ease;
-
-      &:hover {
-        color: #fff;
-        background-color: hsl(0, 100%, 100%, .3);
-      }
     }
   }
 
@@ -87,6 +82,11 @@
     .hamburger {
       display: none;
       visibility: hidden;
+    }
+
+    a.button:hover {
+      color: #fff;
+      background-color: hsl(0, 100%, 100%, .3);
     }
   }
 
